@@ -75,7 +75,7 @@
 
  app.post('/new-todo', function (req, res) {
 
-     let newToDo = {
+     var newToDo = {
          title: req.body.newToDo.title
      };
      new toDoModel(newToDo).save(function (err, createToDo) {
