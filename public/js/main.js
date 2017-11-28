@@ -1,4 +1,4 @@
- let ToDo = new Vue({
+ var ToDo = new Vue({
      el: '#mongoApp',
      beforeCreate() {
          $.get('/todo', (dataFromServer) => {

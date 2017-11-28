@@ -1,8 +1,8 @@
- const express = require('express');
- const bodyParser = require('body-parser');
- const mongoose = require('mongoose');
+ var express = require('express');
+ var bodyParser = require('body-parser');
+ var mongoose = require('mongoose');
 
- const app = express();
+ var app = express();
 
  mongoose.connect('mongodb://localhost:27017/todoApp', {
      useMongoClient: true
@@ -23,7 +23,7 @@
 
  mongoose.Promise = global.Promise;
 
- let ToDoSchema = new mongoose.Schema({
+ var ToDoSchema = new mongoose.Schema({
      title: {
          type: String,
          required: true
@@ -42,7 +42,7 @@
      }
  });
 
- const toDoModel = mongoose.model('todos', ToDoSchema, 'todos');
+ var toDoModel = mongoose.model('todos', ToDoSchema, 'todos');
 
  app.use(express.static('./public'));
  app.use(bodyParser.urlencoded({
